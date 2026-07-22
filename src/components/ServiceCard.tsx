@@ -1,8 +1,14 @@
 'use client';
 
-import { motion, MotionValue, useTransform } from 'framer-motion';
+import {
+  motion,
+  MotionValue,
+  useTransform,
+  useMotionTemplate,
+} from "framer-motion";
 import { LucideIcon } from 'lucide-react';
 import React, { useState } from 'react';
+import type { MotionStyle } from "framer-motion";
 
 // Interfaces
 interface ServiceItem {
@@ -396,28 +402,28 @@ export default function ServiceCard({
         return <div className="w-full h-full bg-neutral-950 flex items-center justify-center text-white/30 text-xs">Preview</div>;
     }
   };
+const filterValue = useMotionTemplate`blur(${blurVal}) brightness(${brightnessVal})`;
+
+const cardStyle: MotionStyle = {
+  width: "320px",
+  height: "470px",
+  scale,
+  rotateY,
+  z: translateZ,
+  x: translateX,
+  opacity,
+  filter: filterValue,
+  zIndex: zIndexVal,
+  transformStyle: "preserve-3d",
+  willChange: "transform, opacity, filter",
+};
 
   return (
     <motion.div
       onClick={onClick}
       onMouseEnter={() => isActive && setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      style={{
-        width: '320px',
-        height: '470px',
-        scale,
-        rotateY,
-        z: translateZ,
-        x: translateX,
-        opacity,
-        filter: useTransform(
-          [blurVal, brightnessVal],
-          ([blur, brightness]) => `blur(${blur}) brightness(${brightness})`
-        ),
-        zIndex: zIndexVal,
-        transformStyle: 'preserve-3d',
-        willChange: 'transform, opacity, filter',
-      }}
+       style={cardStyle}
       animate={isActive && isHovered ? {
         y: -10,
         scale: 1.02,
