@@ -33,7 +33,7 @@ export default function Home() {
           <WhyUs />
           <Stats />
           <Testimonials />
-          <About />
+          {/* <About /> */}
           <CTA />
           <ContactForm />
         </main>

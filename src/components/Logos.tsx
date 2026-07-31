@@ -1,4 +1,4 @@
-'use client';
+  'use client';
 
 import { 
   Instagram, 
@@ -8,7 +8,7 @@ import {
   Play, 
   Music, 
   Activity, 
-  Globe 
+  Globe   
 } from 'lucide-react';
 
 export default function Logos() {
