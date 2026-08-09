@@ -81,4 +81,9 @@ export default function CarouselControls({
       </div>
     </div>
   );
-}
+} 
+
+
+
+
+

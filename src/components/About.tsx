@@ -132,7 +132,7 @@ export default function About() {
                     </p>
                   </div>
 
-                  {/* Social Handles 
+                  {/* Social Handles  
                   <div className="flex gap-3 border-t border-white/5 pt-4 mt-2">
                     {lead.socials.map((platform, pIdx) => {
                       const SocialIcon = platform.icon;

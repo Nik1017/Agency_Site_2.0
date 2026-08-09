@@ -127,14 +127,14 @@ export default function Hero() {
             >
               See Our Work
             </a>
-            <button
-              onClick={(e) => handleScrollTo(e, "contact")}
+            <a
+              href="/book-call"
               data-cursor-label="Book"
-              className="px-8 py-4 bg-black border border-white/10 text-white font-bold text-xs uppercase tracking-wider rounded-full hover:bg-white/5 transition-all duration-300 active:scale-95 relative overflow-hidden group cursor-pointer"
+              className="px-8 py-4 bg-black border border-white/10 text-white font-bold text-xs uppercase tracking-wider rounded-full hover:bg-white/5 transition-all duration-300 active:scale-95 relative overflow-hidden group cursor-pointer inline-block text-center"
             >
               <span className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              Book a Call
-            </button>
+              Book a Strategy Call
+            </a>
           </motion.div>
         </div>
 
