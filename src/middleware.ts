@@ -1,15 +1,27 @@
-import NextAuth from "next-auth";
-import { authConfig } from "@/auth/auth.config";
+import { auth } from "@/auth";
 import { NextRequest } from "next/server";
 import { createClient } from "@/utils/supabase/middleware";
 
-const { auth } = NextAuth(authConfig);
+export default async function middleware(
+  request: NextRequest,
+  event: any
+) {
+  const supabaseResponse = createClient(request);
 
-export default auth(async (req) => {
-  const supabaseResponse = createClient(req as NextRequest);
+  const authResponse = await (auth as any)(request);
+
+  if (authResponse instanceof Response) {
+    supabaseResponse.headers.forEach((value: string, key: string) => {
+      if (key.toLowerCase() === "set-cookie") {
+        authResponse.headers.append(key, value);
+      }
+    });
+
+    return authResponse;
+  }
 
   return supabaseResponse;
-});
+}
 
 export const config = {
   matcher: [

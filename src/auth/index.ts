@@ -4,8 +4,7 @@ import { prisma } from "@/lib/prisma";
 
 // List of administrator email addresses
 const ADMIN_EMAILS = [
-  "nikhilchandrakar00@gmail.com", // SMTP user from .env.local
-  "YOUR_ADMIN_EMAIL" // Predefined placeholder from requirements
+  "nikhilchandrakar00@gmail.com", 
 ];
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
