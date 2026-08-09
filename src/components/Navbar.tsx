@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { BRAND_PART1, BRAND_PART2 } from '@/config/branding';
 
 export default function Navbar() {
   const [visible, setVisible] = useState(true);
@@ -89,7 +90,7 @@ export default function Navbar() {
               onClick={(e) => handleNavClick(e, '#home')}
               className="flex items-center gap-1 font-space text-lg font-black tracking-tighter cursor-pointer text-white"
             >
-              Edify<span className="font-serif-italic italic font-normal text-primary">Grow</span>
+              {BRAND_PART1}<span className="font-serif-italic italic font-normal text-primary">{BRAND_PART2}</span>
             </a>
 
             {/* Desktop Navigation Links */}

@@ -1,12 +1,13 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { BRAND_NAME } from '@/config/branding';
 
 const testimonialsCol1 = [
   {
     name: 'Sarah Jenkins',
     role: 'Founder, ScaledMedia',
-    review: 'Edify Grow completely overhauled our operations. We reclaimed 20 hours a week and scaled our reach to millions.',
+    review: `${BRAND_NAME} completely overhauled our operations. We reclaimed 20 hours a week and scaled our reach to millions.`,
     img: 'SJ',
   },
   {

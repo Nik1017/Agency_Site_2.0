@@ -1,6 +1,7 @@
 'use client';
 
 import { Instagram, Linkedin, Youtube, ArrowUp } from 'lucide-react';
+import { BRAND_PART1, BRAND_PART2, BRAND_NAME } from '@/config/branding';
 
 export default function Footer() {
   const handleScrollToTop = () => {
@@ -20,10 +21,10 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 pb-12 border-b border-white/5">
           <div>
             <h1 className="font-space text-3xl font-black tracking-tighter text-white uppercase mb-2">
-              Edify<span className="font-serif-italic italic font-normal text-primary">Grow</span>
+              {BRAND_PART1}<span className="font-serif-italic italic font-normal text-primary">{BRAND_PART2}</span>
             </h1>
             <span className="text-[10px] uppercase font-bold tracking-widest text-[#B8B8B8]">
-              © {new Date().getFullYear()} Edify Grow Systems. All rights reserved.
+              © {new Date().getFullYear()} {BRAND_NAME} Systems. All rights reserved.
             </span>
           </div>
 

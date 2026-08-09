@@ -8,6 +8,8 @@ import Link from "next/link";
 import { LogOut, Calendar, CheckCircle2, Loader2 } from "lucide-react";
 
 import Cal from "@calcom/embed-react";
+import { BRAND_PART1, BRAND_PART2, BRAND_NAME_CAMEL } from "@/config/branding";
+
 
 export default function BookCallPage() {
   const { data: session, status } = useSession();
@@ -31,6 +33,7 @@ export default function BookCallPage() {
       </div>
     );
   }
+  
 
   return (
     <div className="relative min-h-screen bg-background text-white font-sans flex flex-col">
@@ -42,9 +45,9 @@ export default function BookCallPage() {
           href="/"
           className="flex items-center gap-1 font-space text-lg font-black tracking-tighter text-white"
         >
-          Edify
+          {BRAND_PART1}
           <span className="font-serif-italic italic font-normal text-primary">
-            Grow
+            {BRAND_PART2}
           </span>
         </Link>
 
@@ -164,7 +167,7 @@ export default function BookCallPage() {
       {/* Footer disclaimer */}
       <footer className="relative z-10 w-full text-center py-6 border-t border-white/5">
         <span className="text-[10px] uppercase font-space font-medium tracking-widest text-muted-custom/30">
-          Powered by EdifyGrow Scheduler & Cal.com
+          Powered by {BRAND_NAME_CAMEL} Scheduler & Cal.com
         </span>
       </footer>
     </div>

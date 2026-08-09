@@ -3,6 +3,8 @@ import BackgroundEffects from "@/components/BackgroundEffects";
 import { LayoutDashboard, Users, Calendar, BarChart3, LogOut, ArrowLeft } from "lucide-react";
 import { auth, signOut } from "@/auth";
 import { redirect } from "next/navigation";
+import { BRAND_PART1, BRAND_PART2 } from "@/config/branding";
+
 
 export default async function AdminLayout({
   children,
@@ -55,7 +57,7 @@ export default async function AdminLayout({
         {/* Brand Header */}
         <div className="flex items-center justify-between md:justify-start gap-1 mb-8">
           <Link href="/" className="flex items-center gap-1 font-space text-lg font-black tracking-tighter text-white">
-            Edify<span className="font-serif-italic italic font-normal text-primary">Grow</span>
+            {BRAND_PART1}<span className="font-serif-italic italic font-normal text-primary">{BRAND_PART2}</span>
           </Link>
 
           <span className="text-[10px] uppercase font-bold font-space bg-primary/20 text-primary border border-primary/30 px-2 py-0.5 rounded-full">

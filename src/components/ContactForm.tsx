@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { BRAND_EMAIL } from "@/config/branding";
 import {
   Send,
   CheckCircle,
@@ -120,10 +121,10 @@ export default function ContactForm() {
                     DIRECT EMAIL
                   </span>
                   <a
-                    href="mailto:hello@edifygrow.com"
+                    href={`mailto:${BRAND_EMAIL}`}
                     className="text-sm font-bold text-white hover:text-primary transition-colors"
                   >
-                    hello@edifygrow.com
+                    {BRAND_EMAIL}
                   </a>
                 </div>
               </div>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { SessionProvider } from "next-auth/react";
+import { BRAND_NAME } from "@/config/branding";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Edify Grow — Business systems & online presence.",
+  title: `${BRAND_NAME} — Business systems & online presence.`,
   description: "We build intelligent digital systems that make businesses easier to run, discover, and grow.",
 };
 

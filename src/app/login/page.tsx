@@ -2,6 +2,7 @@ import { signIn } from "@/auth";
 import BackgroundEffects from "@/components/BackgroundEffects";
 import { Chrome } from "lucide-react";
 import Link from "next/link";
+import { BRAND_PART1, BRAND_PART2 } from "@/config/branding";
 
 interface PageProps {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
@@ -35,7 +36,7 @@ export default async function LoginPage({ searchParams }: PageProps) {
             href="/"
             className="flex items-center gap-1 font-space text-2xl font-black tracking-tighter mb-8 cursor-pointer text-white"
           >
-            Edify<span className="font-serif-italic italic font-normal text-primary">Grow</span>
+            {BRAND_PART1}<span className="font-serif-italic italic font-normal text-primary">{BRAND_PART2}</span>
           </Link>
 
           <h1 className="text-3xl font-bold tracking-tight mb-2 uppercase font-space">

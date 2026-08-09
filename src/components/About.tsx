@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Target, Eye, Sparkles, Youtube, Instagram, Linkedin } from 'lucide-react';
+import { BRAND_NAME } from '@/config/branding';
 
 const pillars = [
   {
@@ -63,7 +64,7 @@ export default function About() {
           </div>
           <div className="lg:col-span-7">
             <p className="text-sm md:text-base text-muted-custom leading-relaxed font-medium">
-              Edify Grow was founded to replace legacy agency overhead with high-performance, automated operations and robust digital visibility.
+              {BRAND_NAME} was founded to replace legacy agency overhead with high-performance, automated operations and robust digital visibility.
             </p>
           </div>
         </div>

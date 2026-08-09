@@ -2,30 +2,31 @@
 
 import { motion } from 'framer-motion';
 import { X, Check, ShieldAlert, Award, ArrowUpRight } from 'lucide-react';
+import { BRAND_NAME } from '@/config/branding';
 
 const comparisonData = [
   {
     feature: 'Operations Automated',
     traditional: '22%',
     traditionalVal: 22,
-    edifygrow: '72%',
-    edifygrowVal: 72,
+    revyromedia: '72%',
+    revyromediaVal: 72,
     suffix: '%',
   },
   {
     feature: 'Conversion Rate',
     traditional: '3.2%',
     traditionalVal: 26,
-    edifygrow: '12.4%',
-    edifygrowVal: 92,
+    revyromedia: '12.4%',
+    revyromediaVal: 92,
     suffix: '%',
   },
   {
     feature: 'Average ROI',
     traditional: '1.6x',
     traditionalVal: 32,
-    edifygrow: '4.8x',
-    edifygrowVal: 96,
+    revyromedia: '4.8x',
+    revyromediaVal: 96,
     suffix: 'x',
   },
 ];
@@ -34,17 +35,17 @@ const checklistComparison = [
   {
     topic: 'Operational Focus',
     traditional: 'Repetitive, manual data entry and slow spreadsheets.',
-    edifygrow: 'Intelligent automations running silently in the background.',
+    revyromedia: 'Intelligent automations running silently in the background.',
   },
   {
     topic: 'Growth Strategy',
     traditional: 'Generic templates, loud sales pitches, high waste.',
-    edifygrow: 'Precision SEO and target channels that attract organic buyers.',
+    revyromedia: 'Precision SEO and target channels that attract organic buyers.',
   },
   {
     topic: 'Delivery & Support',
     traditional: 'Delayed responses, endless meetings, slow turnarounds.',
-    edifygrow: 'Dedicated Slack channel, transparent progress, and rapid delivery.',
+    revyromedia: 'Dedicated Slack channel, transparent progress, and rapid delivery.',
   },
 ];
 
@@ -61,7 +62,7 @@ export default function WhyUs() {
             </span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-space font-bold tracking-tighter uppercase text-white leading-none">
               The agency <br />
-              vs <span className="font-serif-italic italic font-normal text-primary lowercase">edify grow.</span>
+              vs <span className="font-serif-italic italic font-normal text-primary lowercase">{BRAND_NAME.toLowerCase()}.</span>
             </h2>
           </div>
           <p className="text-xs md:text-sm text-muted-custom max-w-sm leading-relaxed mb-1">
@@ -84,7 +85,7 @@ export default function WhyUs() {
                 <div key={idx} className="flex flex-col gap-2">
                   <div className="flex justify-between items-center text-xs">
                     <span className="font-semibold text-white">{data.feature}</span>
-                    <span className="text-primary font-black uppercase text-[10px]">{data.edifygrow} vs {data.traditional}</span>
+                    <span className="text-primary font-black uppercase text-[10px]">{data.revyromedia} vs {data.traditional}</span>
                   </div>
                   
                   {/* Traditional bar */}
@@ -100,20 +101,20 @@ export default function WhyUs() {
                     <span className="text-[10px] font-bold text-muted-custom/85 z-10">{data.traditional}</span>
                   </div>
 
-                  {/* Edify Grow bar */}
+                  {/* Revyro Media bar */}
                   <div className="relative h-7 bg-neutral-950 rounded-lg overflow-hidden border border-primary/20 flex items-center justify-between px-3">
                     <motion.div 
                       initial={{ width: 0 }}
-                      whileInView={{ width: `${data.edifygrowVal}%` }}
+                      whileInView={{ width: `${data.revyromediaVal}%` }}
                       viewport={{ once: true }}
                       transition={{ duration: 1.2, ease: 'easeOut', delay: idx * 0.15 }}
                       className="absolute left-0 top-0 bottom-0 bg-primary/25"
                     />
                     <span className="text-[9px] uppercase tracking-widest font-black text-primary z-10 flex items-center gap-1.5 animate-pulse">
                       <span className="w-1.5 h-1.5 rounded-full bg-primary animate-ping" />
-                      EDIFY GROW
+                      {BRAND_NAME.toUpperCase()}
                     </span>
-                    <span className="text-xs font-black text-white z-10">{data.edifygrow}</span>
+                    <span className="text-xs font-black text-white z-10">{data.revyromedia}</span>
                   </div>
                 </div>
               ))}
@@ -146,14 +147,14 @@ export default function WhyUs() {
                   <p className="text-[11px] text-muted-custom/75 leading-relaxed">{item.traditional}</p>
                 </div>
 
-                {/* Edify Grow Section */}
+                {/* Revyro Media Section */}
                 <div className="flex flex-col gap-3 pl-0 md:pl-2">
                   <div className="flex items-center gap-2 text-primary font-bold uppercase tracking-widest text-[9.5px]">
                     <Check className="w-4 h-4 text-primary" />
-                    <span>EDIFY GROW STANDARD</span>
+                    <span>{BRAND_NAME.toUpperCase()} STANDARD</span>
                   </div>
                   <h4 className="text-xs font-black uppercase text-white tracking-tight">{item.topic}</h4>
-                  <p className="text-[11px] text-white leading-relaxed">{item.edifygrow}</p>
+                  <p className="text-[11px] text-white leading-relaxed">{item.revyromedia}</p>
                 </div>
               </motion.div>
             ))}
